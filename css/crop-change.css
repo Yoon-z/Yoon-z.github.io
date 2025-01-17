@@ -1,0 +1,71 @@
+.crop-change-chart-container {
+    width: 100%;
+    height: 442px;
+    display: flex;
+    flex-direction: column;
+}
+
+.crop-change-content {
+    display: flex;
+    flex-direction: row;
+}
+
+#crop-change-map-container {
+    width: 100%;
+    flex-grow: 1;
+}
+
+iframe#crop-change-map {
+    width: 100%;
+    height: 60vh;
+    border: none;
+}
+
+#crop-change-image {
+    height: 85%;
+    object-fit: contain;
+    overflow: hidden;
+    border: none;
+}
+
+.crop-change-class {
+    width: 15%;
+    margin-left: 10px;
+    margin-top: 1px;
+    font-size: 11px;
+    line-height: 1.5;
+    overflow-y: auto;
+}
+
+.crop-change-class div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+}
+
+.crop-change-class div>div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}

@@ -1,0 +1,49 @@
+.lulc-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lulc-content {
+    width: 20%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow-y: auto;
+    border-left: 2px solid #ccc;
+}
+
+.lulc-class {
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.lulc-class div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.lulc-class div>div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.interact-content-section {
+    width: 80%;
+    padding: 10px;
+}
+
+iframe#lulc-map {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
