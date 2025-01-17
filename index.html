@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myanmar Food Security & Climate Change</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .intro {
+            height: 100vh;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: url('./images/0.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.5);
+            background-blend-mode: lighten;
+            color: black;
+        }
+
+        .scroll-container {
+            position: relative;
+        }
+
+        .sticky-background {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .background-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content-section {
+            position: relative;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 0 auto;
+            width: 90%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .spacer {
+            height: 50vh;
+        }
+
+        .content-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 100%;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            background: white;
+            margin: 1rem 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.7rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 0.7rem;
+        }
+
+        p {
+            margin-bottom: 0.7rem;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Style for the black bar */
+        .top-bar {
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 4px;
+            gap: 10px;
+            position: sticky;
+            top: 0;
+            /* Sticks to the top of the viewport */
+            z-index: 1000;
+            /* Ensures the bar stays above other content */
+        }
+
+        /* Style for the logo */
+        .logo {
+            width: 45px;
+            height: auto;
+            margin-left: 3px;
+        }
+
+        /* Style for the text next to the logo */
+        .top-bar-text {
+            font-size: 11px;
+            font-weight: bold;
+            flex-grow: 1;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/lulc.css">
+    <link rel="stylesheet" href="./css/crop-change.css">
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <img src="./images/logo.png" alt="Logo" class="logo">
+        <span class="top-bar-text">GovTech Design Lab <br>
+            Technical University of Munich</span>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="intro">
+        <div>
+            <h1>The Food Security Challenge in Myanmar</h1>
+            <p>An introduction to Myanmar's reliance on agriculture and the importance of crop lands.<br>
+                The risks posed by climate change, environmental degradation, and food insecurity.<br>
+            </p>
+        </div>
+    </section>
+
+    <!-- Scrolling Sections -->
+    <div class="scroll-container">
+
+        <!-- Land Cover Section -->
+        <section class="sticky-background">
+            <div class="map-container">
+                <img src="./images/1.jpg" alt="Land Cover Map" class="background-image">
+            </div>
+        </section>
+
+        <div class="content-wrapper">
+            <div class="lulc-section">
+                <div class="interact-content-section">
+                    <iframe id="lulc-map" src="./maps/myanmar_lulc.html"> </iframe>
+                </div>
+                <div class="lulc-content">
+                    <div class="lulc-text">
+                        <h3> Land Cover Map of Myanmar </h3>
+                        <p style="font-size: 12px;"> This interactive map presents a detailed visualization of Myanmar's
+                            land cover,<br>
+                            showcasing the distribution of various natural and human-altered land cover types.<br>
+                            Users can explore and compare land cover changes over three distinct years: 2001, 2010, and
+                            2020, by toggling between the layers on the map.</p>
+                    </div>
+                    <div class="lulc-class">
+                        <div>
+                            <div style="background-color: #05450a;"></div>
+                            Evergreen needleleaf forest
+                        </div>
+                        <div>
+                            <div style="background-color: #086a10;"></div>
+                            Evergreen broadleaf forest
+                        </div>
+                        <div>
+                            <div style="background-color: #54a708;"></div>
+                            Deciduous needleleaf forest
+                        </div>
+                        <div>
+                            <div style="background-color: #78d203;"></div>
+                            Deciduous broadleaf forest
+                        </div>
+                        <div>
+                            <div style="background-color: #009900;"></div>
+                            Mixed forest
+                        </div>
+                        <div>
+                            <div style="background-color: #c6b044;"></div>
+                            Closed shrublands
+                        </div>
+                        <div>
+                            <div style="background-color: #dcd159;"></div>
+                            Open shrublands
+                        </div>
+                        <div>
+                            <div style="background-color: #dade48;"></div>
+                            Woody savannas
+                        </div>
+                        <div>
+                            <div style="background-color: #fbff13;"></div>
+                            Savannas
+                        </div>
+                        <div>
+                            <div style="background-color: #b6ff05;"></div>
+                            Grasslands
+                        </div>
+                        <div>
+                            <div style="background-color: #27ff87;"></div>
+                            Permanent wetlands
+                        </div>
+                        <div>
+                            <div style="background-color: #c24f44;"></div>
+                            Croplands
+                        </div>
+                        <div>
+                            <div style="background-color: #a5a5a5;"></div>
+                            Urban and built-up
+                        </div>
+                        <div>
+                            <div style="background-color: #ff6d4c;"></div>
+                            Cropland/natural vegetation mosaic
+                        </div>
+                        <div>
+                            <div style="background-color: #69fff8;"></div>
+                            Snow and ice
+                        </div>
+                        <div>
+                            <div style="background-color: #f9ffa4;"></div>
+                            Barren or sparsely vegetated
+                        </div>
+                        <div>
+                            <div style="background-color: #1c0dff;"></div>
+                            Water bodies
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Land Cover Section -->
+        <section class="sticky-background">
+            <div class="map-container">
+                <img src="./images/2.jpeg" alt="Land Cover Map" class="background-image">
+            </div>
+        </section>
+
+        <div class="content-wrapper">
+            <div class="content-section">
+                <div>
+                    <h2>Crop Land Changes Over Time</h2>
+                    <div class="crop-change-content">
+                        <div class="crop-change-text">
+                            <p id="para1" style="font-size: 14px;"> Present the bar plot showing the overall rise in
+                                crop land area over time.
+                                <br>
+                                Cropland change metrics for Myanmar:<br>
+                                Total change: 489,643.37 hectares<br>
+                                Percent change: 3.66%<br>
+                                Average annual change: 25,770.70 hectares/year<br>
+                            </p>
+                            <p id="para2" style="display:none; font-size: 14px;">Follow it with geospatial maps
+                                highlighting:<br>
+                                Crop land loss in the southern coastal regions.<br>
+                                Crop land gains in the central and northern regions.
+                            </p>
+                        </div>
+                        <div class="crop-change-chart-container">
+                            <div class="crop-change-map-container">
+                                <iframe id="crop-change-map" src="./maps/myanmar_cropland_change.html"
+                                    style="display:none;"> </iframe>
+                                <img id="crop-change-image" src="./images/crop-statistic.jpg" alt="Regional Map"
+                                    class="background-image">
+                            </div>
+                            <div class="crop-change-class" id="crop-change-class" style="display:none;">
+                                <div>
+                                    <div style="background-color: #ff0000;"></div>
+                                    Cropland Loss
+                                </div>
+                                <div>
+                                    <div style="background-color: #00ff00;"></div>
+                                    Cropland Gain
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <!-- <button id="prev-btn" onclick="switchSlide('prev')">Previous</button> -->
+                    <button id="next-btn" onclick="switchSlide('next')">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Regional Focus Section -->
+        <section class="sticky-background">
+            <div class="map-container">
+                <img src="./images/3.jpg" alt="Regional Map" class="background-image">
+            </div>
+        </section>
+
+        <div class="content-wrapper">
+            <div class="content-section">
+                <h2>Investigating Environmental Drivers </h2>
+                <p>Discuss possible environmental factors affecting the southern coastal region (e.g., climate events
+                    like cyclones, rising sea levels, or soil degradation).
+                    Include relevant visual data (e.g., maps or timelines showing environmental trends in southern
+                    Myanmar, if available).<br>
+                    Mention limitations: Lack of regional variation data but evident trends in the map.
+                </p>
+                <div class="chart-container">
+                    <!-- Add your chart/visualization here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Analysis Section -->
+        <section class="sticky-background">
+            <div class="map-container">
+                <img src="./images/4.jpg" alt="Data Visualization" class="background-image">
+            </div>
+        </section>
+
+        <div class="content-wrapper">
+            <div class="content-section">
+                <h2>Predicting Crop Land Area: The Regression Models</h2>
+                <p>Explain the regression model that predicts total crop land area based on climate data. Include a
+                    graph or chart showing actual vs. predicted values.
+                    Present the future predictions model based on anticipated climate scenarios:<br>
+                    Show trends in crop land area under different climate conditions (e.g., optimistic vs. pessimistic
+                    scenarios).<br>
+                    Highlight the uncertainty of predictions to maintain scientific integrity.
+                </p>
+                <div class="chart-container">
+                    <!-- Add your chart/visualization here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="button-switch.js"></script>
+
+    <script>
+        // Add smooth scrolling behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll-based animations if needed
+        function handleScroll() {
+            const scrollPosition = window.scrollY;
+            // Add your scroll-based animations here
+        }
+
+        window.addEventListener('scroll', handleScroll);
+    </script>
+</body>
+
+</html>
